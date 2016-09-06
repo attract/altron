@@ -70,7 +70,7 @@ RUN chmod 777 /var/run/celery
 RUN yum install -y bzip2
 #RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 
-ADD ./phantomjs-2.1.1-linux-x86_64.tar.bz2 /home/docker/code/phantomjs-2.1.1-linux-x86_64.tar.bz2
+ADD ./phantomjs-2.1.1-linux-x86_64.tar.bz2 /phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN tar -xvf phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/
 RUN rm -fr phantomjs-2.1.1-linux-x86_64
