@@ -76,5 +76,3 @@ RUN mkdir -p /home/docker/code/media/pdf
 RUN chmod 777 /home/docker/code/media/pdf
 
 RUN pip install -r /home/docker/code/req.txt
-
-CMD ["/home/docker/code/docker/start.sh"]
