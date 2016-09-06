@@ -54,9 +54,6 @@ RUN chmod 777 /opt/log/sphinx
 RUN mkdir -p /var/lib/sphinx/data
 RUN chmod 777 /var/lib/sphinx/data
 
-# run pip install
-RUN pip install -r /home/docker/code/req.txt
-
 RUN mkdir /var/log/uwsgi/
 
 # Celery config
@@ -70,12 +67,14 @@ RUN chmod 777 /var/run/celery
 RUN yum install -y bzip2
 #RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 
-ADD ./phantomjs-2.1.1-linux-x86_64.tar.bz2 /phantomjs-2.1.1-linux-x86_64.tar.bz2
-RUN tar -xvf phantomjs-2.1.1-linux-x86_64.tar.bz2
+# adding an archive will automatically extract it
+ADD ./phantomjs-2.1.1-linux-x86_64.tar.bz2 /
 RUN mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/
 RUN rm -fr phantomjs-2.1.1-linux-x86_64
-RUN rm -fr phantomjs-2.1.1-linux-x86_64.tar.bz2
+#RUN rm -fr phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN mkdir -p /home/docker/code/media/pdf
 RUN chmod 777 /home/docker/code/media/pdf
+
+RUN pip install -r /home/docker/code/req.txt
 
 CMD ["/home/docker/code/docker/start.sh"]
