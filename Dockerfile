@@ -29,6 +29,9 @@ RUN yum install -y libjpeg-devel
 RUN yum install -y git
 RUN pip install uwsgi
 
+# Install Cron
+RUN yum install -y cronie
+
 # Set work directory
 ENV DIRPATH /home/docker/code/
 
