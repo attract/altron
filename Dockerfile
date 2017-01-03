@@ -66,6 +66,10 @@ RUN chmod 777 /var/log/celery
 RUN mkdir -p /var/run/celery
 RUN chmod 777 /var/run/celery
 
+# Install unrar
+ADD ./unrar-5.0.3-1.el7.rf.x86_64.rpm /
+RUN rpm -Uvh unrar-5.0.3-1.el7.rf.x86_64.rpm
+
 # Install phantomjs
 RUN yum install -y bzip2
 #RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
