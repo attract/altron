@@ -69,4 +69,5 @@ django-ckeditor==5.0.3
 #django-debug-toolbar==1.4
 # Configuration
 django-environ==0.4.0
-rarfile
+rarfile==3.0
+pylzma==0.4.8
